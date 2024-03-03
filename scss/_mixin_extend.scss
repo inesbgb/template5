@@ -1,0 +1,86 @@
+@use "var";
+
+@mixin btnBleu(){
+
+    background-color: map-get(var.$colors, 1);
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    max-width: 135px;
+    color: white;
+    &:hover{
+        background-color: map-get(var.$colors, 2);
+    }
+}
+@mixin btnGetTicketRose(){
+
+    background-color: map-get(var.$colors, 2);
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    max-width: 135px;
+    color: white;
+    &:hover{
+        background-color: map-get(var.$colors, 1);
+    }
+    
+}
+
+
+@mixin btnRose(){
+    color: white;
+    background-color: map-get(var.$colors, 2);
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        background-color: map-get(var.$colors, 1);
+    }
+
+}
+@mixin btnSocialMedia(){
+    background-color: map-get(var.$colors, 3);
+
+    &:hover{
+        background-color: map-get(var.$colors, 2);
+    }
+    
+   
+}
+
+@mixin btnBlueOutline(){
+
+max-width: 100px;
+margin: 0 auto;
+color: map-get(var.$colors, 1);
+border-color: map-get(var.$colors, 1);
+&:hover{
+background-color: map-get(var.$colors, 1) ;
+border: map-get(var.$colors, 1);
+color: white;
+   
+}
+}
+
+@mixin btnPinkOutline(){
+
+    max-width: 100px;
+    margin: 0 auto;
+    color: map-get(var.$colors, 2);
+    border-color: map-get(var.$colors, 2);
+    &:hover{
+    background-color: map-get(var.$colors, 2) ;
+    border: map-get(var.$colors, 2);
+    color: white;
+       
+    }
+    }
+    
+
+
+@mixin logo(){
+    width:150px;
+   
+}
+

@@ -1,0 +1,83 @@
+//Use
+@use "var";
+@use "mixin_extend";
+
+@use "header_footer";
+body {
+    max-height: 1200px;
+}
+
+.containerSpeakers {
+    position: relative;
+    bottom: 100px;
+
+
+    .container {
+        .titleSpeakers {
+            color: map-get(var.$colors, 2);
+            font-weight: bolder;
+        }
+
+        .loremPricing {
+            font-size: 12px;
+            font-weight: lighter;
+
+        }
+        .titreSection{
+            font-weight: bolder;
+        }
+
+        .card-title {
+            &:hover {
+                color: map-get(var.$colors, 2);
+            }
+        }
+    }
+.imgOverlay{
+    position: relative;
+}
+   
+
+    .overlay {
+        position: absolute;
+    
+        bottom: 10%;
+        opacity: 0;
+        transition: .5s ease;
+
+        .fa {
+            padding: 5px 10px;
+            font-size: 15px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            color: white;
+
+        }
+        .fa-facebook {
+            background: #3B5998;
+        
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+        
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+        
+        }
+
+        .fa-instagram {
+            background: map-get(var.$colors, 2);
+        
+        }
+        &:hover {
+            opacity: 1;
+            transform: translateX(30px)
+        }
+    }
+}
+

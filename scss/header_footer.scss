@@ -1,0 +1,327 @@
+
+
+
+@use "var";
+@use "mixin_extend";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Libre+Baskerville&family=Merienda:wght@800&family=Montserrat:wght@100;500&family=Noto+Sans+JP&family=Noto+Sans:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Lato&family=Libre+Baskerville&family=Merienda:wght@800&family=Montserrat:wght@100;500&family=Noto+Sans+JP&family=Noto+Sans:wght@300;400&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+header{
+  background: url(../src/hero/hero-bg.jpg) center/cover;
+  height: 400px;
+  padding-top: 50px;
+  
+
+  nav{
+    
+    margin: 0 auto;
+    width: 100%;
+  }
+  .logo{
+    width: 40%;
+  }
+  .logo img{
+    width: 100px;
+  }
+
+  nav ul{
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  li{
+    display: flex;
+    align-items: center;
+    
+  }
+  a{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+
+  }
+
+ .ticket{
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-left: 50px;
+   }
+  .ticket a {
+    background-color: rgb(5, 45, 175);
+    padding: 10px 15px;
+    font-size: 0.5rem;
+    border-radius: 5px;
+   }
+   .ticket a:hover{
+    background-color: rgb(192,5,132);
+   }
+
+ .container-header{
+  font-family: 'Noto Sans', sans-serif;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+  max-width: 600px;
+  color: white;
+
+ }
+ .localisation{
+  display: flex;
+  justify-content: center;
+ 
+ }
+
+ .localisation p{
+  width: 150px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.24);
+ }
+ .localisation i{
+  margin-right: 10px;
+ }
+ .container-header p {
+  font-size: 0.5rem;
+ }
+
+ .btn-header button{
+  color: white;
+  cursor: pointer;
+  background-color: rgb(192,5,132);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.6rem;
+ }
+ .btn-header button:hover{
+  background-color: rgb(5, 45, 175);
+ }
+
+ #check{
+  display: none;
+ }
+ .menu{
+  display: flex;
+  gap: 20px;
+ }
+ .menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+  
+}
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: 0.1s ease;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: rgb(141,2,191);
+    background: linear-gradient(45deg, rgba(141, 2, 191, 0.904) 44%, rgba(215, 4, 134, 0.788) 76%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+/*Média queries pour les differentes taille d'écrans*/
+@media (max-width:930px){
+  .ticket a{
+    padding:10px 15px ;
+    font-size: 0.6rem;
+    
+  }
+  .ticket{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    
+    
+  }
+  .container-header{
+    margin-top: 50px;
+    row-gap: 30px;
+  }
+}
+
+ @media (max-width:620px){
+  .menu {
+    gap: 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 100;
+    background: rgb(141,2,191);
+background: linear-gradient(45deg, rgba(141, 2, 191, 0.904) 44%, rgba(215, 4, 134, 0.788) 76%);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu li a {
+  padding: 10px;
+  font-weight: 900;
+
+}
+.open-menu , .close-menu {display: block;}
+#check:checked ~ .menu {left: 0;transform:rotate(360deg);}
+
+.logo{
+  width: 100%;
+  margin-left: 10px;
+}
+h1{
+  font-size: 1rem;
+}
+
+
+.ticket a{
+  padding:5px 10px ;
+  font-size: 0.6rem;
+  
+}
+
+.ticket{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: -20px auto ; 
+}
+.localisation p{
+  margin-top: 20px;
+}
+
+ }
+ @media (max-width:400px){
+  .container-header{
+    gap: 15px;
+
+  }
+ }
+}
+
+
+
+//Bannière en bas
+.imgLeadingConference{
+  background-image:
+  linear-gradient(to right, map-get(var.$colors, 5),map-get(var.$colors, 6)),
+  url('../src/call-action/call-bg.jpg');
+  max-width: 100vw;
+  height: 400px;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  position: relative;
+  bottom: 100px;
+  // bottom: 500px;
+h2{
+  font-weight: bolder;
+}
+//Lorem
+.loremConf{
+  font-size: 12px;
+  font-weight: lighter;
+  opacity: 70%;
+
+  
+}
+
+ // Bouton Get tickets
+
+ 
+ .getTickets {
+  text-decoration: none;
+  @include mixin_extend.btnBleu();
+}
+
+}
+
+
+// Footer
+footer {
+position: relative;
+bottom: 100px;
+ // bottom: 500px;
+  .text-body{
+    text-decoration:none;
+   
+  }
+
+  .logoDarkEvengrids{
+    @include mixin_extend.logo();
+  }
+
+  .fa{
+    padding:  5px 10px;
+    font-size: 15px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+
+    color: white;
+
+    @include mixin_extend.btnSocialMedia();
+
+  }
+
+  .btnSubscribe{
+    background-color: map-get(var.$colors, 2);
+    border: none;
+  }
+
+  .descriptionEventGrids{
+    margin-right:7%;
+   
+  
+  }
+  .quickLinks{
+    margin-right:-7%;
+   
+  }
+}

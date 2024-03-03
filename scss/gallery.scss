@@ -1,0 +1,80 @@
+//Use
+@use "var";
+@use "mixin_extend";
+
+@use "header_footer";
+
+
+body{
+    max-height: 1200px;
+  }
+
+.gallery {
+   
+    padding: 20px;
+    
+    position: relative;
+    bottom: 100px;
+    //Texte haut 
+    .titleGallery {
+        color: map-get(var.$colors, 2);
+        font-weight: bolder;
+    }
+
+    .loremPricing {
+        font-size: 12px;
+        font-weight: lighter;
+
+    }
+
+    .titreSection {
+        font-weight: bolder;
+    }
+
+}
+
+
+.block-gallery {
+    text-align: center;
+}
+
+.grid-gallery {
+    
+      
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap:10px;
+    justify-content: center; 
+  
+   
+}
+.item-gallery {
+    overflow: hidden;
+}
+
+
+.item-gallery img{
+    width: 100%;
+    transition: transform .1s;
+}
+.item-gallery img:hover {
+    -ms-transform: scale(1.5) translate(10px); /* IE 9 */
+    -webkit-transform: scale(1.5) translate(10px); /* Safari 3-8 */
+    transform: scale(1.5) translate(30px);
+  
+}
+@media screen and (max-width:600px){
+    .section-gallery{
+        padding: 0;
+    }
+}
+
+
+// .imgLeadingConference {
+//     bottom: 100px;
+
+// }
+
+// footer {
+//     bottom: 100px;
+// }

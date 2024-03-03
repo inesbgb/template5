@@ -1,0 +1,29 @@
+//Use
+@use "var";
+@use "mixin_extend";
+@use "header_footer";
+
+
+
+body{
+    max-height: 1200px;
+  }
+.contact{
+    background-size: cover;
+    padding: 20px;
+    position: relative;
+    bottom: 100px;
+   
+h2{
+    font-weight: bolder;
+}
+p{
+    font-weight: 400;
+}
+
+.btnSendMessage{
+    margin-left: 10px;
+    background-color: map-get(var.$colors, 1);
+}
+}
+

@@ -1,0 +1,142 @@
+
+//Use
+@use "var";
+@use "mixin_extend";
+
+@use "header_footer";
+
+body{
+  max-height: 1200px;
+}
+.pricing{
+   
+  background-image:
+  linear-gradient(to right, map-get(var.$colors, 5),map-get(var.$colors, 6)),
+  url('../src/pricing/pricing-bg.jpg');
+
+ 
+ 
+  background-size: cover;
+  color: white;
+  padding: 20px;
+ position: relative;
+ bottom: 100px;
+.titlePricing{
+  font-weight: bolder;
+}
+  .loremPricing{
+    font-size: 12px;
+    font-weight: lighter;
+    opacity: 70%;
+  }
+.card{
+  width: auto;
+  min-width:200px;
+  &:hover{
+    margin-top: -.5rem;
+    margin-bottom: .5rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  
+}
+.btnBlue{
+  @include mixin_extend.btnBlueOutline();
+  
+}
+.btnPink{
+  
+  @include mixin_extend.btnPinkOutline();
+
+}
+.price{
+ 
+  font-weight:bolder ;
+}
+
+.txt-available {
+
+  opacity:70%;
+}
+.icon-check{
+
+  opacity:70%;
+ 
+}
+.getTickets {
+  position: relative;
+  display: inline-block;
+  @include mixin_extend.btnBleu();
+
+
+  &:before,
+&:after{
+    height:90px;
+    width:45px;
+    content: '';
+    position: absolute;
+    background-color: white;
+    top: 0.9em;
+    top: calc(0.9em - 1px);
+    height: 1.1em;
+    width: 0.6em;
+
+}
+&:before {
+  top: 0.7em;
+    left: 0px;
+    border-radius: 0 1em 1em 0;
+    border-left-color: black;
+}
+&:after {
+  top: 0.7em;
+  right: 0px;
+    border-radius: 1em 0 0 1em;
+    border-right-color: black;
+}
+
+}
+
+.getTicketsRose{
+  position: relative;
+  display: inline-block;
+  @include mixin_extend.btnGetTicketRose();
+  &:before,
+  &:after{
+      height:90px;
+      width:45px;
+      content: '';
+      position: absolute;
+      background-color: white;
+      top: 0.9em;
+      top: calc(0.9em - 1px);
+      height: 1.1em;
+      width: 0.6em;
+  
+  }
+  &:before {
+    top: 0.7em;
+      left: 0px;
+      border-radius: 0 1em 1em 0;
+      border-left-color: black;
+  }
+  &:after {
+    top: 0.7em;
+    right: 0px;
+      border-radius: 1em 0 0 1em;
+      border-right-color: black;
+  }
+}
+
+
+
+}
+
+.imgLeadingConference{
+  bottom: 100px;
+
+}
+
+footer{
+  bottom:100px;
+}
+ 

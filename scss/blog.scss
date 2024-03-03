@@ -1,0 +1,226 @@
+//Use
+@use "var";
+@use "mixin_extend";
+@use "header_footer";
+
+
+body{
+    max-height: 1200px;
+  }
+.blog{
+    position: relative;
+    bottom: 100px;
+
+    .titleBlog {
+        color: map-get(var.$colors, 2);
+        font-weight: bolder;
+    }
+
+    .loremPricing {
+        font-size: 12px;
+        font-weight: lighter;
+
+    }
+
+    .titreSection {
+        font-weight: bolder;
+    }
+    .top{
+        text-align: center;
+        margin-bottom:100px ;
+    }
+    
+    .block-blog{
+        display: flex;
+        justify-content: center;
+    }
+    .section-cards{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+    .card{
+        width: 350px;
+        background-color:white;
+        margin-bottom: 50px;
+        border-radius: 5px; 
+        box-shadow: 0 10px 10px 10px rgba(0,0,0,0.2);
+        padding: 15px;
+        transition: all 0.3s ease;
+     
+    }
+    .card:hover{
+        transform: scale(0.9);
+        transition: all 0.3s ease;
+    }
+    
+    .card-image img{
+        width: 100%;
+        
+    }
+    .card-image{
+        position:relative;
+    }
+    
+    .card-date{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(255, 55, 228);
+        border-radius: 5px;
+        color:white;
+        width: 40px;
+        height:60px;
+        position:absolute;
+        top:20%;
+        left:9%;
+        transform: translate(-50%,-50%);
+    }
+    .card-date p{
+        text-align: center;
+    }
+    .number-date{
+        font-weight: bold;
+    }
+    .text-event{
+        font-weight: bold;
+        color: #4a3ce8;
+        margin-top: 10px;
+    
+    }
+    .card-content h4{
+    font-weight: bold;
+    font-size: 19px;
+    padding-bottom: 30px;
+    
+    }
+    
+    .card-content p {
+        padding-bottom: 30px;
+        font-size: 15px;
+    }
+    
+    .btn-blog{  
+        background-color: #4a3ce8;
+        color:#fff; 
+        padding: 10px 10px;
+        
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        border-radius:5px;
+        font-weight: bold;
+    }
+    
+    .btn-blog:hover{
+        background-color: rgb(255, 55, 228);
+    }
+    
+    .section-feed{
+    width: 380px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    .search-bar{
+    
+        padding: 20px 10px;
+        margin-bottom: 10px;
+        background-color: #111232;
+        border-radius: 5px;
+    position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #mySearch{
+        padding: 20px 30px;
+        border-radius: 5px;
+        width: 270px;
+        height: 50px;
+    }
+    .icon-search{
+        background-color: #4a3ce8;
+        width: 45px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        border-radius: 5px;
+        position: absolute;
+        right: 17%;
+    }
+    .icon-search:hover{
+        background-color: rgb(255, 55, 228);
+    }
+    .feed{
+        background-color: #111232;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .title-blog{
+        margin-top: 10px;
+        
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .card-feed{
+        display: flex;
+        margin-top: 20px ;
+        height: 120px;
+    }
+    
+    .card-feed img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+       
+    }
+    .text-feed  {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 30px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .text-feed .date{
+        text-align: end;
+    }
+    
+    i {
+        margin-right: 3px;
+    }
+    
+    @media screen and (max-width:1480px) {
+        .block-blog{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    @media screen and (max-width:1100px) {
+        .section-cards{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    @media screen and (max-width:420px) {
+        .card{
+            width: 300px; 
+        }
+        .section-feed{
+            width: 300px;
+        }
+        .icon-search{
+            right: 7%;
+        }
+    }
+}

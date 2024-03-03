@@ -1,0 +1,210 @@
+//Use
+@use "var";
+@use "mixin_extend";
+
+@use "header_footer";
+
+body {
+    max-height: 1200px;
+}
+
+.schedule {
+    background-size: cover;
+
+
+
+    padding: 20px;
+    position: relative;
+    bottom: 100px;
+
+    //Texte haut 
+    .titleSchedule {
+        color: map-get(var.$colors, 2);
+        font-weight: bolder;
+    }
+
+    .loremPricing {
+        font-size: 12px;
+        font-weight: lighter;
+
+    }
+
+    .titreSection {
+        font-weight: bolder;
+    }
+
+    //Schedule Days
+    .containerJourDate {
+        .txtDate {
+            font-weight: 500;
+
+        }
+
+        .cardJourDate {
+            border: none;
+            margin-right: -20px;
+            min-width: 60px;
+
+            &:hover {
+                border-bottom: 5px solid map-get(var.$colors, 2);
+                color: map-get(var.$colors, 2);
+            }
+        }
+
+    }
+
+
+    .containerEventDescription {
+        margin-top: 10px;
+        margin-left: 10px;
+
+        &:hover {
+            border-left: 5px solid map-get(var.$colors, 2);
+
+        }
+
+        .containerBody {
+
+            display: flex;
+
+            max-height: 400px;
+
+            //Partie Dates
+            .datesHeures {
+
+                display: flex;
+                max-width: 350px;
+                min-width: 200px;
+
+                .chiffres {
+                    margin-right: -30px;
+                    margin-top: -10px;
+                    min-width: 100px;
+                    font-size: 50px;
+                    font-weight: bolder;
+                }
+
+                .Mois {
+
+                    font-size: 20px;
+                    font-weight: bolder;
+
+                    &:hover {
+
+                        color: map-get(var.$colors, 2);
+                    }
+                }
+
+                .heure {
+                    font-weight: 500;
+                }
+
+            }
+
+            //Partie Description
+            .descriptionEvent {
+
+                display: flex;
+                max-width: 500px;
+                min-width: none;
+                margin-top: 10px;
+
+                .imageEvent {
+
+                    max-width: 150px;
+                }
+
+                .imgImage {
+
+                    max-width: 70%;
+                    clip-path: circle(40%);
+                    margin-right: 2px;
+                    margin-top: -15px;
+                }
+
+                .txtDescriptEvent {
+
+
+                    .titreDesc {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        margin-left: -30px;
+
+                        &:hover {
+
+                            color: map-get(var.$colors, 2);
+                        }
+
+
+                    }
+
+                    .lieuEvent {
+                        display: flex;
+                        margin-left: -30px;
+                        font-size: smaller;
+                      
+                        font-weight: 500;
+
+                        .fa-solid {
+                            color: map-get(var.$colors, 2);
+                    
+                         
+
+                        }
+
+                        .lieuIntervenant {
+                         
+                            margin-right: 20px;
+                            padding-right: 20px;
+                           
+                        }
+                      
+                    }
+                   
+                }
+            }
+
+            //Bouton
+            .buttonReadMore {
+
+                display: flex;
+                justify-content: end;
+
+
+                .btnReadMore {
+                    @include mixin_extend.btnBleu();
+                    text-decoration: none;
+                    margin-top: 20px;
+                    margin-right: 10px;
+                    font-size: small;
+                }
+            }
+        }
+
+
+    }
+
+    @media (max-width:400px) {
+        .containerJourDate {
+            .txtDate {
+                font-size: 8px;
+
+            }
+        }
+
+        .card-title {
+            font-size: 15px;
+        }
+
+        .txtDescriptEvent {
+            margin-left: 20px;
+
+
+        }
+
+        .imgImage {
+            max-width: 100%;
+        }
+     
+    }
+}
